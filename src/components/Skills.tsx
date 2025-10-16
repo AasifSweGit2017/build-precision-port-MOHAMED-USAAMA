@@ -14,7 +14,7 @@ const Skills = () => {
       title: "Professional Skills",
       icon: Calculator,
       skills: [
-        { name: "Quantity Take-off", level: 95 },
+        { name: "Quantity Take-off", level: 50 },
         { name: "Tendering & BOQ Preparation", level: 98 },
         { name: "Cost Estimation & Control", level: 92 },
         { name: "Contract Management", level: 88 },
