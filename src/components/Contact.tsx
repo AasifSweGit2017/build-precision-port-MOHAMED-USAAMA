@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Mail, Phone, Linkedin, MapPin, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "emailjs-com";
+
+
+
+
+
+
 
 const Contact = () => {
   const { toast } = useToast();
@@ -13,6 +20,41 @@ const Contact = () => {
     email: "",
     message: "",
   });
+    const formRef = useRef();
+
+  const sendEmail = (e: React.FormEvent) => {
+
+  e.preventDefault();
+
+  emailjs
+    .sendForm(
+      "service_fa582gv",
+      "template_6c0kj2d",
+      formRef.current,
+      "ffWX3zmTA4yiWhMsB"
+
+    )
+    .then(
+      (result) => {
+        toast({
+          title: "✅ Message sent successfully!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        });
+        //setFormData({ name: "", email: "", message: "" });
+        console.log(result.text);
+        console.log(formRef.current);
+      },
+      (error) => {
+          toast({
+          title: "❌ Failed to send message.",
+          description: "Please try again later.",
+        });
+        //setFormData({ name: "", email: "", message: "" });
+        console.log(error.text);
+      }
+    );
+
+}
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,25 +69,25 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "yourmail@gmail.com",
-      href: "mailto:yourmail@gmail.com",
+      value: "aamusaama@gmail.com",
+      href: "mailto:aamusaama@gmail.com",
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+94 750 000 000",
-      href: "https://wa.me/94750000000",
+      value: "+971 50 324 2362",
+      href: "https://wa.me/971503242362",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "mohamed-usaama",
+      value: "Mohamed Usaama",
       href: "https://linkedin.com/in/mohamed-usaama",
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "Dubai, UAE",
+      value: "Dubai, United Arabic Emirates",
       href: "https://maps.google.com/?q=Dubai,UAE",
     },
   ];
@@ -99,13 +141,14 @@ const Contact = () => {
 
             {/* Contact Form */}
             <Card className="p-6 glass-effect shadow-card animate-fade-in">
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form  ref={formRef} onSubmit={sendEmail} className="space-y-4">
                 <div>
                   <label htmlFor="name" className="text-sm font-medium mb-2 block">
                     Your Name
                   </label>
                   <Input
                     id="name"
+                    name="from_name"
                     placeholder="John Doe"
                     value={formData.name}
                     onChange={(e) =>
@@ -122,6 +165,7 @@ const Contact = () => {
                   <Input
                     id="email"
                     type="email"
+                    name="from_email"
                     placeholder="john@example.com"
                     value={formData.email}
                     onChange={(e) =>
@@ -140,6 +184,7 @@ const Contact = () => {
                   </label>
                   <Textarea
                     id="message"
+                    name="message"
                     placeholder="Tell me about your project..."
                     rows={5}
                     value={formData.message}

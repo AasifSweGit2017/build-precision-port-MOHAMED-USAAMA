@@ -3,11 +3,24 @@ import { Card } from "@/components/ui/card";
 
 const Experience = () => {
   const experiences = [
+     {
+      title: "Quantity Surveyor",
+      company: "Mosaic Interiors LLC",
+      location: "Al Qusais, Dubai, UAE",
+      period: "Feb 2025 - Sep 2025",
+      responsibilities: [
+        "Leading cost estimation and BOQ preparation for major infrastructure projects",
+        "Managing tender submissions and contract negotiations",
+        "Implementing value engineering solutions to optimize project costs",
+        "Conducting detailed quantity take-offs and cost analysis",
+        "Coordinating with subcontractors and suppliers for competitive pricing",
+      ],
+    },
     {
       title: "Quantity Surveyor",
       company: "Amwaj Dhofar Trad. & Cont. Co.",
       location: "Oman",
-      period: "Jan 2023 – Present",
+      period: "Jan 2023 – Jan 2025",
       responsibilities: [
         "Leading cost estimation and BOQ preparation for major infrastructure projects",
         "Managing tender submissions and contract negotiations",

@@ -1,7 +1,7 @@
-import { Download, Mail } from "lucide-react";
+import { Download, Mail, View } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
-import profileImg from "@/assets/profile.jpg";
+import profileImg from "@/assets/mohamed_usaama_img.png";
 
 const Hero = () => {
   return (
@@ -35,12 +35,12 @@ const Hero = () => {
           <div className="space-y-4 animate-fade-in">
             <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
               Abdul Akbar Mohamed{" "}
-              <span className="bg-clip-text text-transparent gradient-primary">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
                 Usaama
               </span>
             </h1>
             <p className="text-xl lg:text-2xl text-muted-foreground font-medium">
-              Quantity Surveyor (BSc. Hons)
+              Quantity Surveyor (BSc. Hons)<sup>R</sup>
             </p>
             <p className="text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto">
               Building the future with precision, efficiency, and integrity
@@ -50,8 +50,27 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 animate-slide-up">
             <Button size="lg" className="w-full sm:w-auto shadow-card">
-              <Download className="mr-2 h-5 w-5" />
-              Download CV
+              <a
+                href="https://drive.google.com/file/d/19VPVnFhxLq6C3I55vPdJRmx2uLJlOko3/view?usp=sharing"
+                target="_blank"
+                className="w-full sm:w-auto flex items-center justify-center"
+              >
+              <View className="mr-2 h-5 w-5" />
+
+                View CV
+              </a>
+              
+            </Button>
+            <Button size="lg" className="w-full sm:w-auto shadow-card">
+              <a
+                href="/assets/Abdul_Akbar_Mohamed_Usaama_CV.pdf"
+                download
+                className="w-full sm:w-auto flex items-center justify-center"
+              >
+                <Download  className="mr-2 h-5 w-5"/>
+                Download CV
+              </a>
+              
             </Button>
             <Button
               size="lg"

@@ -1,6 +1,8 @@
 import { GraduationCap, BookOpen } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { link } from "fs";
+
 
 const Education = () => {
   const education = [
@@ -8,36 +10,42 @@ const Education = () => {
       degree: "BSc (Hons) in Quantity Surveying",
       institution: "De Montfort University",
       year: "Reading",
+      link: "",
       status: "current",
     },
     {
       degree: "Higher National Diploma in Quantity Surveying",
       institution: "Gatehouse Awards Ltd, UK",
       year: "2024",
+      link: "",
       status: "completed",
     },
     {
       degree: "Diploma in Quantity Surveying",
       institution: "E.C. Nations College",
       year: "2020",
+      link: "",
       status: "completed",
     },
     {
       degree: "National Diploma in Construction Technology",
       institution: "Department of Technical Education and Training",
       year: "2023",
+      link: "",
       status: "completed",
     },
     {
       degree: "Diploma in Fit-Out and Joinery Quantity Surveying",
       institution: "CBT Campus",
       year: "2025",
+      link: "",
       status: "current",
     },
     {
       degree: "Professional Certificate in Human Resource Management",
       institution: "Virtual Academy",
       year: "2025",
+      link: "",
       status: "current",
     },
   ];
@@ -77,6 +85,19 @@ const Education = () => {
                           className="text-xs whitespace-nowrap"
                         >
                           Reading
+                        </Badge>
+                      )
+                      }{edu.status === "completed" && (
+                        <Badge
+                          variant="secondary"
+                          className="text-xs whitespace-nowrap"
+                        >
+                          <a href="" target="_blank" rel="noopener noreferrer"
+                          
+                          > {
+                            "View Certificate"
+
+                          } </a>
                         </Badge>
                       )}
                     </div>

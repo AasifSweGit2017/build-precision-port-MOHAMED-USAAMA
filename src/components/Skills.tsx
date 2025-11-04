@@ -14,7 +14,7 @@ const Skills = () => {
       title: "Professional Skills",
       icon: Calculator,
       skills: [
-        { name: "Quantity Take-off", level: 50 },
+        { name: "Quantity Take-off", level: 80 },
         { name: "Tendering & BOQ Preparation", level: 98 },
         { name: "Cost Estimation & Control", level: 92 },
         { name: "Contract Management", level: 88 },
@@ -78,9 +78,9 @@ const Skills = () => {
                         <span className="text-sm font-medium">
                           {skill.name}
                         </span>
-                        <span className="text-xs text-muted-foreground">
+                        {/* <span className="text-xs text-muted-foreground">
                           {skill.level}%
-                        </span>
+                        </span> */}
                       </div>
                       <div className="h-2 bg-muted rounded-full overflow-hidden">
                         <div
