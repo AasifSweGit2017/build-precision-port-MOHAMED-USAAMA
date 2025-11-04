@@ -82,18 +82,6 @@ const Experience = () => {
                     <span className="text-sm font-medium">{exp.period}</span>
                   </div>
                 </div>
-
-                <ul className="space-y-2 ml-0 lg:ml-16">
-                  {exp.responsibilities.map((resp, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-start gap-3 text-muted-foreground"
-                    >
-                      <div className="mt-2 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                      <span>{resp}</span>
-                    </li>
-                  ))}
-                </ul>
               </Card>
             ))}
           </div>
