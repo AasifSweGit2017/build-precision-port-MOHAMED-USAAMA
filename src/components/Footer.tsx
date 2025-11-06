@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container px-4 lg:px-8">
         <div className="flex flex-col items-center justify-center gap-4 text-center">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Abdul Akbar Mohamed Usaama. All rights reserved.
+            © {currentYear} Abdul Akbar Mohamed Usaama. All rights reserved. v1.0.3
           </p>
           <div className="flex items-center gap-2 text-sm">
             <span className="text-muted-foreground">Built and Managed by</span>
